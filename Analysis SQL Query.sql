@@ -26,9 +26,10 @@ ORDER BY 3 DESC
 SELECT *
 FROM dbo.enron_transpose_data$ en
 WHERE en.poi = 1 or en.email_address is null
-ORDER BY en.salary DESC
+ORDER BY en.total_payments DESC
 
 
-SELECT *
+SELECT COUNT(*)
 FROM dbo.enron_transpose_data$ as en
-WHERE en.Name = 'PRENTICE JAMES'
+WHERE en.email_address != 'NaN'
+
