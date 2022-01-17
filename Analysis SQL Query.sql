@@ -25,11 +25,11 @@ ORDER BY 3 DESC
 --Find the POI count (Persons of interest)
 SELECT *
 FROM dbo.enron_transpose_data$ en
-WHERE en.poi = 1 or en.email_address is null
+WHERE en.poi = 1 and en.total_payments is null
 ORDER BY en.total_payments DESC
 
 
 SELECT COUNT(*)
 FROM dbo.enron_transpose_data$ as en
-WHERE en.email_address != 'NaN'
+WHERE en.total_payments is null
 
